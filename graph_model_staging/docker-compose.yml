@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  app:
+    build: .
+    image: graph_model_staging
+    container_name: graph_model_staging
+    command: uvicorn main:app --reload --host 0.0.0.0 --port 8008
+    volumes:
+      - ./:/graph_model_staging/
+    ports:
+      - 8008:8008
+
